@@ -1,0 +1,440 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #ecf0f1;
+    --accent-color: #27ae60;
+    --accent-hover-color: #2ecc71;
+    --danger-color: #e74c3c;
+    --font-family: 'Open Sans', sans-serif;
+    --font-heading: 'Roboto', sans-serif;
+    --font-size-base: 16px;
+    --padding-base: 15px;
+    --margin-base: 20px;
+    --border-radius: 5px;
+    --line-height-base: 1.5;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: #f9f9f9;
+    color: #34495e;
+    margin: 0;
+    padding: 0;
+    line-height: var(--line-height-base);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 var(--padding-base);
+}
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: var(--margin-base) auto;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: var(--padding-base) 0;
+    height: 40px;
+}
+
+section {
+    margin-bottom: var(--margin-base);
+}
+
+h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+form {
+    max-width: 600px;
+    margin: var(--margin-base) auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea, select {
+    width: calc(100% - var(--padding-base) * 2);
+    margin-bottom: var(--margin-base);
+    padding: var(--padding-base);
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-base);
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(39, 174, 96, 0.5);
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    padding: var(--padding-base);
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+button:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    background-color: var(--accent-hover-color);
+}
+
+#busca {
+    width: 100%;
+    padding: var(--padding-base);
+    margin-bottom: var(--margin-base);
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-base);
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+#busca:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(39, 174, 96, 0.5);
+}
+
+#listaViagens .itemViagem {
+    background-color: #ffffff;
+    padding: var(--padding-base);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#listaViagens .itemViagem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+#listaViagens .itemViagem h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #34495e;
+    margin-bottom: 10px;
+}
+
+#listaViagens .itemViagem p {
+    font-size: var(--font-size-base);
+    color: #7f8c8d;
+    margin-bottom: 5px;
+}
+
+#listaViagens .itemViagem button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--danger-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    line-height: 0;
+    transition: all 0.3s ease;
+}
+
+#listaViagens .itemViagem button:hover {
+    background-color: #c0392b;
+    transform: scale(1.1);
+}
+
+#listaViagens .itemViagem button::before {
+    content: '×';
+    font-size: 20px;
+    line-height: 1;
+}
+
+.error {
+    color: var(--danger-color);
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.success {
+    color: var(--accent-color);
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.date-container {
+    position: relative;
+}
+
+.date-container i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #ccc;
+}
+
+.date-container input {
+    padding-right: 30px;
+}
+
+.chart-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.chart-container {
+    flex: 1;
+    min-width: 300px;
+    margin: 10px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.chart-container canvas {
+    flex: 1;
+    max-height: 350px;
+    width: 100% !important;
+}
+
+#downloadPDF {
+    background-color: #34495e;
+    color: #ecf0f1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+#downloadPDF:hover {
+    background-color: #2c3e50;
+}
+
+#dadosResumo {
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+    main {
+      width: 100%;
+      padding: var(--padding-base);
+    }
+  
+    form {
+      padding: 20px;
+    }
+  
+    input, textarea {
+      width: calc(100% - var(--padding-base));
+    }
+  
+    h1, h2 {
+      font-size: 24px;
+    }
+  
+    h3 {
+      font-size: 18px;
+    }
+  
+    input, textarea {
+      padding: 10px;
+      height: 35px;
+      font-size: 14px;
+    }
+}
+
+canvas {
+    margin-top: 20px;
+}
+
+.refresh-btn {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.refresh-btn.clicked {
+    background-color: green;
+    animation: rotate 0.5s linear;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.refresh-btn:hover {
+    background-color: var(--accent-color);
+}
+
+.chart-container h3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.tab {
+    display: none;
+}
+
+.tab.active {
+    display: block;
+}
+
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.form-navigation button {
+    width: auto;
+    padding: 10px 20px;
+}
+
+.rotate {
+    animation: rotate 1s ease-in-out;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#feedback {
+    display: none;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+#feedback.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+#feedback.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+#formCadastro .tab {
+    display: none;
+}
+
+#formCadastro .tab.active {
+    display: block;
+}
+
+#formCadastro .tab input.invalid {
+    border-color: red;
+}
+
+#formCadastro .tab button {
+    margin-top: 20px;
+}
+
+#formCadastro .tab button#nextBtn,
+#formCadastro .tab button#prevBtn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#formCadastro .tab button#nextBtn:hover,
+#formCadastro .tab button#prevBtn:hover {
+    background-color: #45a049;
+}
